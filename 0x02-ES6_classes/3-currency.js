@@ -1,9 +1,5 @@
 export default class Currency {
   constructor(code, name) {
-    if (typeof code !== "string" || typeof name !== "string") {
-      throw new Error("Attribute must be a string");
-    }
-
     this._code = code;
     this._name = name;
   }
@@ -11,6 +7,10 @@ export default class Currency {
     return this._code;
   }
   set newCode(newCode) {
+    if (typeof code !== "string") {
+      throw new Error("Code must be a string");
+    }
+
     this._code = newCode;
   }
 
@@ -18,6 +18,10 @@ export default class Currency {
     return this._name;
   }
   set currencyName(currencyName) {
+    if (typeof currencyName !== "string") {
+      throw new Error("Name must be a string");
+    }
+
     this._name = currencyName;
   }
 
